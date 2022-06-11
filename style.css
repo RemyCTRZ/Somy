@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*
+Josh's Custom CSS Reset
+https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Oswald', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    user-select: none;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+section,
+header {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 0px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Navbar */
+
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+    font-size: 1.3em;
+    padding: 0 1em;
+    z-index: 100;
+    animation: appear-from-top 1s ease;
+}
+
+nav a {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #E6E6E6;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transition: transform 0.25s ease-out;
+    border-radius: 20px;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+nav a:hover {
+    color: #fff;
+    transition: 0.25s ease-out;
+}
+
+nav .navbar_right {
+    position: relative;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+    gap: 1.5em;
+}
+
+/* Dropdown */
+
+nav .dropdown {
+    position: relative;
+}
+
+nav .dropdown_content {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 0;
+    gap: .5em;
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav .dropdown:hover .dropdown_content {
+    visibility: visible;
+    opacity: 1;
+    transition: .5s ease;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    padding: 5em;
+}
+
+header h1 {
+    background: rgb(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 0.5em 1em;
+    animation: appear-from-right 2s ease forwards;
+    opacity: 0;
+    animation-delay: 1s;
+}
+
+header .img_couple {
+    animation: appear-from-left 2s ease;
+}
+
+/* Titres */
+
+h1 {
+    position: relative;
+    color: #fff;
+    font-size: 4em;
+    text-decoration: underline solid #fff;
+    text-decoration-color: #E6E6E6;
+    text-underline-offset: 10px;
+}
+
+/* Nous */
+
+#nous {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nous .box_nous {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#nous .box_nous .img_nous {
+    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    aspect-ratio: 3/5;
+    height: 100%;
+    animation: none;
+}
+
+#nous::before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+    top: 50%;
+    left: 5%;
+    height: 30%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+#nous::after {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(180deg, rgba(150, 93, 233, 1) 0%, rgb(44, 31, 228) 100%);
+    top: 15%;
+    right: 5%;
+    height: 50%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+#nous .container {
+    padding: 4em;
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: solid 1px #fff;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 5px 0px #fff;
+    z-index: 2;
+}
+
+#nous h1 {
+    font-size: 3em;
+    letter-spacing: 0.1em;
+    padding: .5em;
+}
+
+#nous p {
+    font-size: 1.1em;
+    text-align: justify;
+    text-align-last: center;
+}
+
+/* Lui */
+
+#lui::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(#ffc107, #e91e63);
+    top: 20%;
+    left: -5%;
+    height: 50%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+#lui::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle farthest-corner at 92.3% 71.5%, rgba(83, 138, 214, 1) 0%, rgba(134, 231, 214, 1) 90%);
+    bottom: -5%;
+    right: 5%;
+    height: 40%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+#lui .card_remy {
+    animation: none;
+}
+
+/* Elle */
+
+#elle::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(#ff6207, #ace91e);
+    top: 10%;
+    left: 15%;
+    height: 30%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+#elle::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle farthest-corner at 92.3% 71.5%, rgb(83, 214, 192) 0%, rgb(231, 229, 134) 90%);
+    bottom: -5%;
+    right: 5%;
+    height: 40%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+#elle img {
+    object-fit: none;
+}
+
+/* Cards */
+
+#lui,
+#elle {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #E6E6E6;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+    height: 80%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    aspect-ratio: 2/3;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.card img {
+    aspect-ratio: 1/1;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.card .img_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .nom_card {
+    width: 100%;
+    text-align: start;
+    padding-left: 2em;
+}
+
+.card h2 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 3em;
+    color: #fff;
+}
+
+.card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.card p {
+    margin: 1em 0;
+    font-size: 1.2em;
+    text-align: justify;
+    text-align-last: center;
+}
+
+/* Intérêts */
+
+.card .hobbies {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.card .hobbies_title {
+    width: 100%;
+    text-align: center;
+}
+
+.card .hobbies_list {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.card h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #333;
+}
+
+.card .hobbies_hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card .hobbies li {
+    overflow: hidden;
+    margin: 0.5em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-size: 4em;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    background-blend-mode: lighten;
+}
+
+/* Hobbies - Web */
+
+.card .hobbies .web {
+    background-image: url(./assets/img/dev.svg);
+}
+
+.card .hobbies .gaming {
+    background-image: url(./assets/img/gaming.svg);
+}
+
+.card .hobbies .music {
+    background-image: url(./assets/img/music.svg);
+}
+
+.card .hobbies .make-up {
+    background-image: url(./assets/img/make-up.png);
+}
+
+.card .hobbies .netflix {
+    background-image: url(./assets/img/netflix.svg);
+}
+
+/* Web Hover */
+
+.card .hobbies li:hover .hobbies_hover {
+    border-radius: 20px;
+    visibility: visible;
+    opacity: 1;
+    transition: ease-in-out .5s;
+}
+
+.card .hobbies li:hover {
+    border-radius: 20px;
+    transition: ease-in-out .5s;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='../css/dates.css'>
+    <link rel='stylesheet' href='../keyframes.css'>
+    <title>Somy</title>
+</head>
+
+<body>
+    <nav>
+        <a class='nav_home' href="../index.html">Accueil</a>
+        <div class="navbar_right">
+            <div class="dropdown">
+                <a class="nav_story" href="../index.html#nous" onclick="AppearFromTop()"
+                    onmouseleave="FadeOut('dropdown_content')">Nous</a>
+                <div class='dropdown_content' id='dropdown_content'>
+                    <a class="nav_story" href="../index.html#lui" onclick="AppearFromLeft()">Lui</a>
+                    <a class="nav_story" href="../index.html#elle" onclick="AppearFromRight()">Elle</a>
+                </div>
+            </div>
+            <a class="nav_timer" href="./dates.html">Nos dates</a>
+            <a class="nav_trips">Nos voyages</a>
+            <a class="nav_moments">Nos moments</a>
+        </div>
+    </nav>
+    <section id="dates">
+        <article class="container">
+            <div class="box_photos">
+                <div class="photo">
+                    <img class="img_remy" src="../assets/img/remy.png" draggable="false" alt='photo de rémy' />
+                    <div class="hover" id="img_remy" onmouseleave="FadeOut('img_remy')">
+                        <p>26 février</p>
+                    </div>
+                </div>
+                <div class="horizontal_container">
+                    <span class="horizontal"></span>
+                    <span class="heart"></span>
+                </div>
+                <div class="photo">
+                    <img class="img_sophie" src="../assets/img/sophie.png" draggable="false" alt='photo de sophie' />
+                    <div class="hover" id="img_sophie" onmouseleave="FadeOut('img_sophie')">
+                        <p>26 décembre</p>
+                    </div>
+                </div>
+            </div>
+            <div class="photo couple">
+                <div class="vertical_container">
+                    <span class="vertical"></span>
+                </div>
+                <img class="img_couple" src="../assets/img/anniv.png" alt='photo de couple' />
+                <div class="hover" id="img_couple" onmouseleave="FadeOut('img_couple')">
+                    <p>29 juin</p>
+                    <div class="timer">
+                        <p id="days"></p>
+                        <p id="hours"></p>
+                        <p id="mins"></p>
+                        <p id="secs"></p>
+                    </div>
+                    <script>
+                        // The data/time we want to countdown to
+                        let countDownDate = new Date("Jun 26, 2022 00:00:00").getTime();
+
+                        // Run myfunc every second
+                        let myfunc = setInterval(function () {
+
+                            let now = new Date().getTime();
+                            let timeleft = countDownDate - now;
+
+                            // Calculating the days, hours, minutes and seconds left
+                            let days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+                            let hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            let minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+                            let seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+                            // Result is output to the specific element
+                            document.getElementById("days").innerHTML = days + "J";
+                            document.getElementById("hours").innerHTML = hours + "h";
+                            document.getElementById("mins").innerHTML = minutes + "m";
+                            document.getElementById("secs").innerHTML = seconds + "s";
+
+                            // Display the message when countdown is over
+                            if (timeleft < 0) {
+                                clearInterval(myfunc);
+                                document.getElementById("days").innerHTML = "";
+                                document.getElementById("hours").innerHTML = "";
+                                document.getElementById("mins").innerHTML = "";
+                                document.getElementById("secs").innerHTML = "";
+                                document.getElementById("end").innerHTML = "JOYEUX 3 ANS !";
+                            }
+                        }, 1000);
+                    </script>
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+<script src="../Animations.js"></script>
+
+</html>

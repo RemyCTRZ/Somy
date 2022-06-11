@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='keyframes.css'>
+    <title>Somy</title>
+</head>
+
+<body>
+    <nav>
+        <a class='nav_home' href="./index.html">Accueil</a>
+        <div class="navbar_right">
+            <div class="dropdown">
+                <a class="nav_story" href="#nous" onclick="AppearFromTop()"
+                    onmouseleave="FadeOut('dropdown_content')">Nous</a>
+                <div class='dropdown_content' id='dropdown_content'>
+                    <a class="nav_story" href="#lui" onclick="AppearFromLeft()">Lui</a>
+                    <a class="nav_story" href="#elle" onclick="AppearFromRight()">Elle</a>
+                </div>
+            </div>
+            <a class="nav_timer" href="./pages/dates.html">Nos dates</a>
+            <a class="nav_trips">Nos voyages</a>
+            <a class="nav_moments">Nos moments</a>
+        </div>
+    </nav>
+    <header id='header'>
+        <img class='img_couple' src='assets/img/couple.svg' alt='logo de couple sur un banc' />
+        <h1>Bienvenue sur notre site !</h1>
+    </header>
+    <section id="nous">
+        <article class="container">
+            <div class="box_nous">
+                <img class="img_nous" src="./assets/img/nous_1.jpg" draggable="false" alt="Photo de Rémy & Sophie" />
+                <img class="img_nous" src="./assets/img/nous_2.jpg" draggable="false" alt="Photo de Rémy & Sophie" />
+                <img class="img_nous" src="./assets/img/nous_3.jpg" draggable="false" alt="Photo de Rémy & Sophie" />
+            </div>
+            <h1>29.06.2019</h1>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae dicta, voluptatibus earum magni
+                temporibus in, molestias explicabo distinctio pariatur iure nobis quae nesciunt aliquid unde praesentium
+                quo eveniet? Velit, soluta consectetur saepe eius placeat nobis tempora temporibus quidem atque, facere
+                obcaecati hic sed quasi error ab assumenda? Nemo nesciunt itaque cupiditate quibusdam quod dignissimos
+                eligendi commodi maiores enim eos? Temporibus quaerat, totam nostrum ratione magnam officiis nihil quo
+                esse quae, tempore nam saepe! Id culpa corporis repellat quae eveniet, ipsa asperiores non error, iste
+                reiciendis est quibusdam laborum recusandae dolorem distinctio obcaecati voluptatibus doloribus
+                excepturi. Ex est culpa ratione provident?
+            </p>
+        </article>
+    </section>
+    <section id='lui'>
+        <div class='card remy'>
+            <div class='img_card'>
+                <img class='photo_card_remy' src="/assets/img/remy.png" draggable="false" alt='photo remy' />
+                <div class='nom_card'>
+                    <h2>Rémy</h2>
+                    <h3>Développeur Web</h3>
+                </div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente earum animi fugit dolores excepturi
+                modi. Adipisci dicta impedit veniam iste earum nobis quis? Saepe dicta eius ea doloribus repudiandae
+                debitis corrupti porro adipisci sequi. Dolores consequatur, alias harum natus quam quasi, facilis
+                maiores voluptatum fugiat, id iusto modi ex eum!
+            </p>
+            <div class='hobbies'>
+                <h2 class='hobbies_title'>Intérêts</h2>
+                <ul class='hobbies_list'>
+                    <li class='web'>
+                        <div class='hobbies_hover'>
+                            <h4 class='web_title'>Dev Web</h4>
+                        </div>
+                    </li>
+                    <li class='gaming'>
+                        <div class='hobbies_hover'>
+                            <h4 class='gaming_title'>Gaming</h4>
+                        </div>
+                    </li>
+                    <li class='music'>
+                        <div class='hobbies_hover'>
+                            <h4 class='music_title'>Musique</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id='elle'>
+        <div class='card sophie'>
+            <div class='img_card'>
+                <img class='photo_card_remy' src="/assets/img/sophie.png" draggable="false" alt='photo remy' />
+                <div class='nom_card'>
+                    <h2>Sophie</h2>
+                    <h3>Etudiante</h3>
+                </div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente earum animi fugit dolores excepturi
+                modi. Adipisci dicta impedit veniam iste earum nobis quis? Saepe dicta eius ea doloribus repudiandae
+                debitis corrupti porro adipisci sequi. Dolores consequatur, alias harum natus quam quasi, facilis
+                maiores voluptatum fugiat, id iusto modi ex eum!
+            </p>
+            <div class='hobbies'>
+                <h2 class='hobbies_title'>Intérêts</h2>
+                <ul class='hobbies_list'>
+                    <li class='make-up'>
+                        <div class='hobbies_hover'>
+                            <h4 class='web_title'>Maquillage</h4>
+                        </div>
+                    </li>
+                    <li class='netflix'>
+                        <div class='hobbies_hover'>
+                            <h4 class='web_title'>Netflix</h4>
+                        </div>
+                    </li>
+                    <li class='music'>
+                        <div class='hobbies_hover'>
+                            <h4 class='web_title'>Musique</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="Animations.js"></script>
+
+</html>
