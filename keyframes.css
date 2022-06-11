@@ -1,3 +1,7 @@
+.appear-left {
+    animation: appear-from-left 2s ease;
+}
+
 @keyframes appear-from-left {
     from {
         opacity: 0;
@@ -10,6 +14,10 @@
     }
 }
 
+.appear-right {
+    animation: appear-from-right 2s ease;
+}
+
 @keyframes appear-from-right {
     from {
         opacity: 0;
@@ -20,6 +28,10 @@
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.appear-top {
+    animation: appear-from-top 2s ease;
 }
 
 @keyframes appear-from-top {
